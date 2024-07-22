@@ -1,9 +1,4 @@
--- OPTIONS
 local opt = vim.opt
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
-vim.g.have_nerd_font = true
 
 --tabs & indentation
 opt.tabstop = 2

@@ -1,4 +1,3 @@
--- KEYMAPS
 local keymap = vim.keymap
 
 -- Diagnostic keymaps
@@ -46,3 +45,17 @@ keymap.set({ 'n', 'o', 'x' }, '<S-h>', '^')
 keymap.set({ 'n', 'o', 'x' }, '<S-l>', 'g_')
 keymap.set({ 'n', 'o', 'x' }, '<S-Left>', '^')
 keymap.set({ 'n', 'o', 'x' }, '<S-Right>', 'g_')
+
+-- [[ Basic Autocommands ]]
+--  See `:help lua-guide-autocommands`
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
