@@ -19,9 +19,11 @@ keymap.set('n', '<ESC>', '<cmd> noh <CR>') -- ESC to remove highlightning
 keymap.set('n', 'n', 'nzz') -- Center search after each n
 
 -- Window
-keymap.set('n', '<leader>h', '<C-w>v') -- Open window horisontally
-keymap.set('n', '<leader>v', '<C-w>s') -- Open window vertically
-keymap.set('n', '<leader>x', '<cmd>x<CR>') -- Open window horisontally
+keymap.set('n', '<leader>h', '<C-w>v', { desc = 'Split window [H]orisontally' }) -- Open window horisontally
+keymap.set('n', '<leader>v', '<C-w>s', { desc = 'Split window [V]ertically' }) -- Open window vertically
+keymap.set('n', '<leader>x', '<cmd>x<CR>', { desc = 'E[X]it' })
+keymap.set('n', '<leader>xa', '<cmd>xall<CR>', { desc = 'E[X]it [A]ll' })
+keymap.set('n', '<leader>qa', '<cmd>qall<CR>', { desc = '[Q]uit [A]ll' })
 
 -- Window navigation
 keymap.set('n', '<C-h>', '<C-w>h')
